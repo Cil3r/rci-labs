@@ -1,0 +1,35 @@
+$ telnet 192.168.56.21 6789
+Trying 192.168.56.21...
+Connected to 192.168.56.21.
+Escape character is '^]'.
+HTTP/1.1 200 OK
+Content-Type: text/html
+Connection: close
+
+<html>
+<body>
+<pre>
+
+ ______________________ 
+/  __  __              \
+| |  \/  |             |
+| | \  / | ___   ___   |
+| | |\/| |/ _ \ / _ \  |
+| | |  | | (_) | (_) | |
+| |_|  |_|\___/ \___/  |
+|                      |
+\                      /
+ ---------------------- 
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+</pre>
+</body>
+</html>
+
+
+Connection closed by foreign host.

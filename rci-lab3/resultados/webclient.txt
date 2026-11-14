@@ -1,0 +1,32 @@
+vagrant@client:~/html$ python webclient.py 192.168.56.21 6789 /index.html
+HTTP/1.1 200 OK
+Content-Type: text/html
+Connection: close
+
+<html>
+<body>
+<pre>
+
+ ______________________ 
+/  __  __              \
+| |  \/  |             |
+| | \  / | ___   ___   |
+| | |\/| |/ _ \ / _ \  |
+| | |  | | (_) | (_) | |
+| |_|  |_|\___/ \___/  |
+|                      |
+\                      /
+ ---------------------- 
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+</pre>
+</body>
+</html>
+
+
+

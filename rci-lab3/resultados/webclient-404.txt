@@ -1,0 +1,5 @@
+vagrant@client:~/html$ python webclient.py 192.168.56.21 6789 /naoexiste.html
+HTTP/1.1 404 Not Found
+
+<html><head></head><body><h1>404 Not Found</h1></body></html>
+
