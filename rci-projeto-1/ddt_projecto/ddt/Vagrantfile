@@ -1,0 +1,30 @@
+# -*- mode: ruby -*-
+# Rede host-only 192.168.56.0/24: "arranque" aloja o servidor UDP (192.168.56.21);
+# no1..no3 executam instâncias do ddt.
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+  # O plugin vagrant-vbguest (se instalado) tenta actualizar as Guest Additions e
+  # falha com versões recentes do Vagrant; as da box chegam para a pasta partilhada.
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    config.vbguest.auto_update = false
+  end
+  config.vm.synced_folder ".", "/home/vagrant/ddt"
+  config.vm.provision "shell", path: "scripts/provisionar.sh"
+
+  {
+    "arranque" => "192.168.56.21",
+    "no1"      => "192.168.56.22",
+    "no2"      => "192.168.56.23",
+    "no3"      => "192.168.56.24",
+  }.each do |nome, ip|
+    config.vm.define nome do |maquina|
+      maquina.vm.hostname = nome
+      maquina.vm.network "private_network", ip: ip
+      maquina.vm.provider "virtualbox" do |vb|
+        vb.memory = 512
+        vb.cpus = 1
+      end
+    end
+  end
+end
